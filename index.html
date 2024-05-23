@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://i.postimg.cc/hPRYq6sg/download-4.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: green;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction Successful</h1>
+        <p id="details"></p>
+        <p>Opay Gift has credited your account successfully. Notification is subjected by the bank.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accountName = localStorage.getItem('accountName');
+            const accountNumber = localStorage.getItem('accountNumber');
+            const amount = localStorage.getItem('amount');
+            const bank = localStorage.getItem('bank');
+
+            const details = `
+                Account Name: ${accountName}<br>
+                Account Number: ${accountNumber}<br>
+                Bank: ${bank}<br>
+                Amount Withdrawn: ₦${amount}
+            `;
+            document.getElementById('details').innerHTML = details;
+        });
+    </script>
+</body>
+</html>
